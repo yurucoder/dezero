@@ -20,19 +20,19 @@ def step_function_2(x: np.ndarray):
 
 
 # 위 함수를 조금 더 간략화할 수 있다!
-def step_function(x: np.ndarray):
+def step_function_3(x: np.ndarray):
     return np.array(x > 0, dtype=np.int32)
 
 
 def 계단함수_그래프():
     x = np.arange(-5.0, 5.0, 0.1)
-    y = step_function(x)
+    y = step_function_3(x)
     plt.plot(x, y)
     plt.ylim(-0.1, 1.1)  # y축의 범위
     plt.show()
 
 
-def sigmoid(x):
+def sigmoid(x: np.ndarray):
     return 1 / (1 + np.exp(-x))
 
 
@@ -42,6 +42,10 @@ def 시그모이드_그래프():
     plt.plot(x, y)
     plt.ylim(-0.1, 1.1)  # y축의 범위
     plt.show()
+
+
+계단함수_그래프()
+시그모이드_그래프()
 
 
 # ReLu(Rectified Linear Unit)은 최근 많이 사용하는 활성화 함수이다!
