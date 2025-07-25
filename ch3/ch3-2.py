@@ -1,7 +1,11 @@
 # 신경망 2 - 3층 신경망 구현하기
 
+import sys, os
+
+sys.path.append(os.getcwd())
 import numpy as np
-from functions import sigmoid, identity_function
+from common.functions import sigmoid, identity_function
+
 
 # 퍼셉트론 복습
 # b + w1x1 + w2x2

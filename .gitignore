@@ -1,2 +1,8 @@
-.conda
+# Cache
 .DS_Store
+.conda
+__pycache__/
+
+# Pickle
+mnist.pkl
+*.gz

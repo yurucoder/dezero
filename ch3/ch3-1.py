@@ -14,13 +14,13 @@ def step_function_1(x):
 
 # 넘파이 배열 x를 부등식으로 비교하면 bool 배열 y가 생성된다.
 # y를 astype() 메서드를 사용하여 0과 1로 이루어진 정수 배열로 변환할 수 있다.
-def step_function_2(x: np.ndarray):
+def step_function_2(x):
     y = x > 0
     return y.astype(np.int)
 
 
 # 위 함수를 조금 더 간략화할 수 있다!
-def step_function_3(x: np.ndarray):
+def step_function_3(x):
     return np.array(x > 0, dtype=np.int32)
 
 
@@ -32,7 +32,7 @@ def 계단함수_그래프():
     plt.show()
 
 
-def sigmoid(x: np.ndarray):
+def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 
