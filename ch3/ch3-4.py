@@ -95,7 +95,7 @@ def normal_process():
             accuracy_cnt += 1
 
     # 입력 개수 대비 정답 수
-    print("Accuracy:" + str(float(accuracy_cnt) / len(x)))
+    print(f"Accuracy: {float(accuracy_cnt) / len(x)}")
 
 
 # batch 처리
@@ -112,7 +112,7 @@ def batch_process():
         p = np.argmax(y_batch, axis=1)
         accuracy_cnt += np.sum(p == t[i : i + batch_size])
 
-    print("Accuracy:" + str(float(accuracy_cnt) / len(x)))
+    print(f"Accuracy: {float(accuracy_cnt) / len(x)}")
 
 
 # 배치 처리와 일반 처리 성능 비교
