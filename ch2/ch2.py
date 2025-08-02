@@ -15,10 +15,14 @@ def AND(x1, x2):
         return 1
 
 
-AND(1, 1)  # 1
-AND(1, 0)  # 0
-AND(0, 1)  # 0
-AND(0, 0)  # 0
+print(
+    "AND 게이트의 진리표",
+    f"1 AND 1: {AND(1, 1)}",  # 1
+    f"1 AND 0: {AND(1, 0)}",  # 0
+    f"0 AND 1: {AND(0, 1)}",  # 0
+    f"0 AND 0: {AND(0, 0)}",  # 0
+    sep="\n",
+)
 
 
 # NAND 게이트는 AND게이트와 반대인 진리표를 갖는다.
@@ -33,10 +37,14 @@ def NAND(x1, x2):
         return 1
 
 
-NAND(1, 1)  # 0
-NAND(1, 0)  # 1
-NAND(0, 1)  # 1
-NAND(0, 0)  # 1
+print(
+    "NAND 게이트의 진리표",
+    f"1 NAND 1: {NAND(1, 1)}",  # 0
+    f"1 NAND 0: {NAND(1, 0)}",  # 1
+    f"0 NAND 1: {NAND(0, 1)}",  # 1
+    f"0 NAND 0: {NAND(0, 0)}",  # 1
+    sep="\n",
+)
 
 
 # OR 게이트는 입력 중 하나라도 1이 있다면 1을 출력한다.
@@ -51,10 +59,15 @@ def OR(x1, x2):
         return 1
 
 
-OR(1, 1)  # 1
-OR(1, 0)  # 1
-OR(0, 1)  # 1
-OR(0, 0)  # 0
+print(
+    "OR 게이트의 진리표",
+    f"1 OR 1: {OR(1, 1)}",  # 1
+    f"1 OR 0: {OR(1, 0)}",  # 1
+    f"0 OR 1: {OR(0, 1)}",  # 1
+    f"0 OR 0: {OR(0, 0)}",  # 0
+    sep="\n",
+)
+
 
 # 선형 그래프로 보았을 때 위의 세 함수는 기울기가 같고 그 위치만 다르다!
 # AND의 경우 x와 y 값이 둘 다 그래프의 위에 위치한 경우 1을 반환한다
@@ -73,7 +86,11 @@ def XOR(x1, x2):  # 0층 (x1, x2)
     return y  # NAND와 OR의 교집합(AND)이 XOR이 된다.
 
 
-XOR(0, 0)  # 0
-XOR(1, 0)  # 1
-XOR(0, 1)  # 1
-XOR(1, 1)  # 0
+print(
+    "XOR 게이트의 진리표",
+    f"0 XOR 0: {XOR(0, 0)}",  # 0
+    f"1 XOR 0: {XOR(1, 0)}",  # 1
+    f"0 XOR 1: {XOR(0, 1)}",  # 1
+    f"1 XOR 1: {XOR(1, 1)}",  # 0
+    sep="\n",
+)

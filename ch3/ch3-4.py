@@ -1,15 +1,12 @@
 # 신경망 4 - 손글씨 숫자 인식
 
-import sys, os
-import time
+import sys, os, time, pickle, numpy as np
+from PIL import Image
 
 sys.path.append(os.getcwd())
-import numpy as np
-import pickle
-
-from PIL import Image
 from dataset.mnist import load_mnist
 from common.functions import sigmoid, softmax
+
 
 # 이미 학습된 매개변수를 사용하여 학습 과정 없이 추론 과정만 구현
 # 이 추론 과정을 '순전파' (forward propagation)이라고 한다
@@ -29,10 +26,13 @@ def use_mnist_image():
     # (훈련 이미지, 훈련 레이블), (시험 이미지, 시험 레이블)
     (x_train, t_train), (x_test, t_test) = load_mnist(flatten=True, normalize=False)
 
-    print(x_train.shape)
-    print(t_train.shape)
-    print(x_test.shape)
-    print(t_test.shape)
+    print(
+        f"x_train.shape: {x_train.shape}",
+        f"t_train.shape: {t_train.shape}",
+        f"x_test.shape: {x_test.shape}",
+        f"t_test.shape: {t_test.shape}",
+        sep="\n",
+    )
 
     img = x_train[0]
     label = t_train[0]
@@ -47,7 +47,7 @@ def use_mnist_image():
 
 # MNIST 로부터 numpy 배열 데이터를 받는다. (입력층 데이터)
 def get_data():
-    (x_train, t_train), (x_test, t_test) = load_mnist(
+    (_, _), (x_test, t_test) = load_mnist(
         normalize=True, flatten=True, one_hot_label=False
     )
     return x_test, t_test

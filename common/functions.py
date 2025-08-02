@@ -16,7 +16,7 @@ def ReLU(x: np.ndarray):
     return np.maximum(0, x)
 
 
-# 항등함수
+# 항등 함수
 def identity_function(x: np.ndarray):
     return x
 

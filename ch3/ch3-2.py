@@ -1,9 +1,8 @@
 # 신경망 2 - 3층 신경망 구현하기
 
-import sys, os
+import sys, os, numpy as np
 
 sys.path.append(os.getcwd())
-import numpy as np
 from common.functions import sigmoid, identity_function
 
 
@@ -49,15 +48,14 @@ Y = identity_function(A3)  # identity_function은 항등 함수로 Y = A3이다.
 
 
 def init_network():
-    network = {}
-    network["W1"] = np.array([[0.1, 0.3, 0.5], [0.2, 0.4, 0.6]])
-    network["b1"] = np.array([0.1, 0.2, 0.3])
-    network["W2"] = np.array([[0.1, 0.4], [0.2, 0.5], [0.3, 0.6]])
-    network["b2"] = np.array([0.1, 0.2])
-    network["W3"] = np.array([[0.1, 0.3], [0.2, 0.4]])
-    network["b3"] = np.array([0.1, 0.2])
-
-    return network
+    return {
+        "W1": np.array([[0.1, 0.3, 0.5], [0.2, 0.4, 0.6]]),
+        "b1": np.array([0.1, 0.2, 0.3]),
+        "W2": np.array([[0.1, 0.4], [0.2, 0.5], [0.3, 0.6]]),
+        "b2": np.array([0.1, 0.2]),
+        "W3": np.array([[0.1, 0.3], [0.2, 0.4]]),
+        "b3": np.array([0.1, 0.2]),
+    }
 
 
 def forward(network, x):
