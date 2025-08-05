@@ -1,9 +1,7 @@
-# coding: utf-8
-try:
-    import urllib.request
-except ImportError:
-    raise ImportError("You should use Python 3.x")
-import os, pickle, gzip, numpy as np
+# mnist.py: Load MNIST data, by Saitoh Koki. koki0702@gmail.com
+# https://github.com/oreilly-japan/deep-learning-from-scratch
+
+import os, pickle, urllib.request, gzip, numpy as np
 
 
 # Constants
@@ -31,7 +29,7 @@ img_dim = (1, 28, 28)
 img_size = 784
 
 
-def _download(file_name):
+def _download(file_name: str):
     file_path = dataset_dir + "/" + file_name
 
     if os.path.exists(file_path):
@@ -53,7 +51,7 @@ def download_mnist():
         _download(v)
 
 
-def _load_label(file_name):
+def _load_label(file_name: str):
     file_path = dataset_dir + "/" + file_name
 
     print("Converting " + file_name + " to NumPy Array ...")
@@ -64,7 +62,7 @@ def _load_label(file_name):
     return labels
 
 
-def _load_img(file_name):
+def _load_img(file_name: str):
     file_path = dataset_dir + "/" + file_name
 
     print("Converting " + file_name + " to NumPy Array ...")
@@ -94,7 +92,7 @@ def init_mnist():
     print("Done!")
 
 
-def _change_one_hot_label(X):
+def _change_one_hot_label(X: np.ndarray):
     T = np.zeros((X.size, 10))
     for idx, row in enumerate(T):
         row[X[idx]] = 1
